@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>afanofbiology.dpdns.org</title>
+    <!-- favicon网站图标 -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,system-ui,sans-serif;}
+        body{background:#f0f0f0;padding:20px;}
+        /* 浏览器外框 */
+        .browser-frame{
+            width:100%;
+            max-width:1200px;
+            margin:0 auto;
+            background:#fff;
+            border:1px solid #999;
+            border-radius:8px;
+            overflow:hidden;
+        }
+        /* 浏览器顶部：地址栏区域 */
+        .browser-top{
+            background:#e9e9e9;
+            padding:8px 12px;
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+        .address-bar{
+            flex-grow:1;
+            background:#ffffff;
+            border:1px solid #bbb;
+            border-radius:4px;
+            padding:6px 10px;
+        }
+        /* 页面Tab导航 Windows Office Google About SFS */
+        .tab-nav{
+            display:flex;
+            background:#ddd;
+            gap:4px;
+            padding:0 12px;
+        }
+        .tab-item{
+            padding:7px 14px;
+            background:#eeeeee;
+            border:1px solid #bbb;
+            border-bottom:none;
+            border-radius:6px 6px 0 0;
+            cursor:pointer;
+        }
+        .tab-item.active{
+            background:#fff;
+            margin-bottom:-1px;
+            position:relative;
+            z-index:2;
+        }
+        /* 主内容区域 */
+        .main-container{
+            display:grid;
+            grid-template-columns: 420px 1fr;
+            gap:24px;
+            padding:24px;
+        }
+        /* 左侧卡片区域 */
+        .card-column{
+            display:flex;
+            flex-direction:column;
+            gap:16px;
+        }
+        .system-card{
+            border:1px solid #aaa;
+            border-radius:6px;
+            padding:14px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        }
+        .card-name{font-size:16px;font-weight:500;}
+        .card-buttons{display:flex;gap:8px;}
+        .btn{
+            padding:4px 10px;
+            border-radius:3px;
+            border:1px solid #888;
+            cursor:pointer;
+            font-size:14px;
+        }
+        .btn-download{background:#0078d4;color:white;border-color:#005a9e;text-decoration:none;}
+        .btn-detail{background:#eeeeee;color:#222;text-decoration:none;}
+        /* 右侧分类列表 */
+        .list-column{
+            display:flex;
+            flex-direction:column;
+            gap:18px;
+        }
+        .list-block h3{
+            margin-bottom:8px;
+            border-bottom:1px solid #ccc;
+            padding-bottom:4px;
+        }
+        .list-item{
+            padding:3px 0;
+            cursor:pointer;
+        }
+        .list-item a{color:#0066cc;text-decoration:none;}
+        .list-item a:hover{text-decoration:underline;}
+        /* 搜索提示文字 */
+        .search-tip{
+            margin:10px 24px;
+            color:#777;
+            font-size:14px;
+        }
+        /* 页面切换容器 */
+        .page{display:none;}
+        .page.show{display:block;}
+    </style>
+</head>
+<body>
+<div class="browser-frame">
+    <!-- 浏览器地址栏 -->
+    <div class="browser-top">
+        <input class="address-bar" value="https://afanofbiology.dpdns.org" readonly>
+        <input id="search-input" placeholder="搜索：">
+    </div>
+    <!-- Tab标签导航 -->
+    <div class="tab-nav">
+        <div class="tab-item active" data-page="page-windows">Windows</div>
+        <div class="tab-item" data-page="page-office">Office</div>
+        <div class="tab-item" data-page="page-google">Google</div>
+        <div class="tab-item" data-page="page-about">About</div>
+        <div class="tab-item" data-page="page-sfs">SFS</div>
+    </div>
+    <!-- Windows页面（默认打开，完全匹配手绘） -->
+    <div class="page show" id="page-windows">
+        <div class="search-tip">搜索：</div>
+        <div class="main-container">
+            <!-- 左侧卡片列：系统卡片，每个带详情、下载按钮 -->
+            <div class="card-column">
+                <div class="system-card">
+                    <span class="card-name">Windows 1</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/win1.img?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Windows 2</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/win2.img?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Windows 3</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/win3.img?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Windows 4</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/win4.img?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Windows 95</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/win95.iso?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Windows 98</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/win98.iso?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Windows 2000</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/win2000.iso?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Windows ME</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/winme.iso?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Windows XP</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/winxp.iso?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Windows Vista</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/winvista.iso?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Windows 7</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/win7.iso?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Windows 8</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/win8.iso?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Windows 8.1</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/win81.iso?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">自制 Windows 9</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/win9-custom.iso?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Windows 10</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/win10.iso?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Windows 11</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/win11.iso?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Surface OS</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/surfaceos.img?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Windows Neptune</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/winneptune.iso?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Windows NT 3.X</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/winnt3x.img?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Windows NT 4.0</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/winnt4.img?download">下载</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 右侧分类列表，和手绘完全一致 -->
+            <div class="list-column">
+                <div class="list-block">
+                    <h3>Windows</h3>
+                    <div class="list-item"><a>Win1</a></div>
+                    <div class="list-item"><a>Win2</a></div>
+                    <div class="list-item"><a>Win3</a></div>
+                    <div class="list-item"><a>Win4</a></div>
+                    <div class="list-item"><a>Win95</a></div>
+                    <div class="list-item"><a>Win98</a></div>
+                    <div class="list-item"><a>Win2000</a></div>
+                    <div class="list-item"><a>WinMe</a></div>
+                    <div class="list-item"><a>WinXP</a></div>
+                    <div class="list-item"><a>WinVista</a></div>
+                    <div class="list-item"><a>Win7</a></div>
+                    <div class="list-item"><a>Win8</a></div>
+                    <div class="list-item"><a>Win8.1</a></div>
+                    <div class="list-item"><a>Win9</a></div>
+                    <div class="list-item"><a>Win10</a></div>
+                    <div class="list-item"><a>Win11</a></div>
+                    <div class="list-item"><a>Surface OS</a></div>
+                    <div class="list-item"><a>Win Neptune</a></div>
+                    <div class="list-item"><a>Win NT3.X</a></div>
+                    <div class="list-item"><a>Win NT4.0</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Office页面 -->
+    <div class="page" id="page-office">
+        <div class="search-tip">搜索：</div>
+        <div class="main-container">
+            <div class="card-column">
+                <div class="system-card">
+                    <span class="card-name">Microsoft Office</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/office.iso?download">下载</a>
+                    </div>
+                </div>
+            </div>
+            <div class="list-column">
+                <div class="list-block">
+                    <h3>Office</h3>
+                    <div class="list-item"><a>Microsoft Office</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Google页面 -->
+    <div class="page" id="page-google">
+        <div class="search-tip">搜索：</div>
+        <div class="main-container">
+            <div class="card-column">
+                <div class="system-card">
+                    <span class="card-name">Google Play</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/gplay.apk?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Google Chrome</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/chrome.exe?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Google Mail</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/gmail.zip?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Google Map</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/gmap.apk?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">Google Gemini</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/gemini.zip?download">下载</a>
+                    </div>
+                </div>
+            </div>
+            <div class="list-column">
+                <div class="list-block">
+                    <h3>Google</h3>
+                    <div class="list-item"><a>Google Play</a></div>
+                    <div class="list-item"><a>Google Chrome</a></div>
+                    <div class="list-item"><a>Google Mail</a></div>
+                    <div class="list-item"><a>Google Map</a></div>
+                    <div class="list-item"><a>Google Gemini</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About页面 -->
+    <div class="page" id="page-about">
+        <div class="search-tip"> </div>
+        <div class="main-container">
+            <div class="card-column">
+                <div class="system-card">
+                    <span class="card-name">简介</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                    </div>
+                </div>
+            </div>
+            <div class="list-column">
+                <div class="list-block">
+                    <h3>About</h3>
+                    <div class="list-item"><a>简介</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SFS页面 -->
+    <div class="page" id="page-sfs">
+        <div class="search-tip">搜索：</div>
+        <div class="main-container">
+            <div class="card-column">
+                <div class="system-card">
+                    <span class="card-name">SFS下载</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/sfs.zip?download">下载</a>
+                    </div>
+                </div>
+                <div class="system-card">
+                    <span class="card-name">航天模拟器</span>
+                    <div class="card-buttons">
+                        <a class="btn btn-detail" href="#">详情</a>
+                        <a class="btn btn-download" href="https://afanofbiology.dpdns.org/files/space-sim.apk?download">下载</a>
+                    </div>
+                </div>
+            </div>
+            <div class="list-column">
+                <div class="list-block">
+                    <h3>SFS</h3>
+                    <div class="list-item"><a>SFS下载</a></div>
+                    <div class="list-item"><a>航天模拟器</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Tab切换逻辑
+    const tabs = document.querySelectorAll('.tab-item');
+    const pages = document.querySelectorAll('.page');
+    tabs.forEach(tab=>{
+        tab.addEventListener('click',()=>{
+            tabs.forEach(t=>t.classList.remove('active'));
+            pages.forEach(p=>p.classList.remove('show'));
+            tab.classList.add('active');
+            const targetId = tab.dataset.page;
+            document.getElementById(targetId).classList.add('show');
+        })
+    })
+    // 简易搜索过滤
+    const searchInput = document.getElementById('search-input');
+    searchInput.addEventListener('input',()=>{
+        const keyword = searchInput.value.toLowerCase();
+        const cards = document.querySelectorAll('.system-card');
+        cards.forEach(card=>{
+            const name = card.querySelector('.card-name').innerText.toLowerCase();
+            if(name.includes(keyword)) card.style.display="flex";
+            else card.style.display="none";
+        })
+    })
+</script>
+</body>
+</html>
