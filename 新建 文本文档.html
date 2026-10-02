@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资源下载站</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin:0;
+            padding:0;
+            font-family:system-ui, sans-serif;
+        }
+        body{
+            background:#f3f4f6;
+            padding:16px;
+        }
+        /* 顶部导航栏，对应手绘 */
+        .nav-bar{
+            display:flex;
+            gap:4px;
+            background:#222;
+            padding:8px;
+            border-radius:6px;
+            margin-bottom:20px;
+            flex-wrap:wrap;
+        }
+        .nav-btn{
+            padding:8px 16px;
+            background:#444;
+            color:white;
+            border:none;
+            border-radius:4px;
+            font-size:16px;
+            cursor:pointer;
+        }
+        .nav-btn.active{
+            background:#2563eb;
+        }
+        .nav-btn:hover{
+            background:#555;
+        }
+        /* 内容卡片容器 */
+        .content-wrap{
+            background:#fff;
+            border-radius:8px;
+            padding:24px;
+            box-shadow:0 2px 8px #00000015;
+        }
+        .page{
+            display:none;
+        }
+        .page.show{
+            display:block;
+        }
+        h2{
+            margin-bottom:16px;
+            color:#111;
+        }
+        p{
+            margin-bottom:12px;
+            line-height:1.6;
+        }
+        /* 下载按钮 */
+        .download-btn{
+            display:inline-block;
+            padding:12px 22px;
+            background:#2563eb;
+            color:#fff;
+            text-decoration:none;
+            border-radius:6px;
+            margin:8px 4px;
+        }
+        .download-btn:hover{
+            background:#1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <div class="nav-bar">
+        <button class="nav-btn active" data-target="home">首页简介</button>
+        <button class="nav-btn" data-target="windows">Windows</button>
+        <button class="nav-btn" data-target="office">Office</button>
+        <button class="nav-btn" data-target="google">Google</button>
+        <button class="nav-btn" data-target="sfs">SFS</button>
+    </div>
+
+    <!-- 内容区域 -->
+    <div class="content-wrap">
+        <!-- 默认首页 -->
+        <div id="home" class="page show">
+            <h2>🏠 首页简介</h2>
+            <p>欢迎来到本站，这里提供各类资源直链下载，无网盘，点击按钮直接获取文件。</p>
+            <p>顶部导航可切换分类：Windows系统、Office套件、Google相关工具、SFS航天模拟器资源。</p>
+            <p>本站托管于GitHub Pages，域名：afanofbiology.dpdns.org</p>
+        </div>
+
+        <!-- Windows页面：Win1 ~ Win11 全套按钮 -->
+        <div id="windows" class="page">
+            <h2>🪟 Windows 全系列系统资源</h2>
+            <p>Windows 1 至 Windows11 历史系统镜像直链下载</p>
+            <a class="download-btn" href="【替换为对应直链】" download>Windows 1</a>
+            <a class="download-btn" href="【替换为对应直链】" download>Windows 2</a>
+            <a class="download-btn" href="【替换为对应直链】" download>Windows 3.x</a>
+            <a class="download-btn" href="【替换为对应直链】" download>Windows NT 3.X</a>
+            <a class="download-btn" href="【替换为对应直链】" download>Windows NT 4.0</a>
+            <a class="download-btn" href="【替换为对应直链】" download>Windows 95</a>
+            <a class="download-btn" href="【替换为对应直链】" download>Windows 98</a>
+            <a class="download-btn" href="【替换为对应直链】" download>Windows 2000</a>
+            <a class="download-btn" href="【替换为对应直链】" download>Windows ME</a>
+            <a class="download-btn" href="【替换为对应直链】" download>Windows XP</a>
+            <a class="download-btn" href="【替换为对应直链】" download>Windows Vista</a>
+            <a class="download-btn" href="【替换为对应直链】" download>Windows 7</a>
+            <a class="download-btn" href="【替换为对应直链】" download>Windows 8</a>
+            <a class="download-btn" href="【替换为对应直链】" download>Windows 8.1</a>
+            <a class="download-btn" href="【替换为对应直链】" download>Windows 10</a>
+            <a class="download-btn" href="【替换为对应直链】" download>Windows 11</a>
+        </div>
+
+        <!-- Office页面，等下你把Office的代码发给我，我再替换这块 -->
+        <div id="office" class="page">
+            <h2>📑 Microsoft Office</h2>
+            <p>Office套件相关资源（后续替换为你提供的代码）</p>
+        </div>
+
+        <!-- Google页面 -->
+        <div id="google" class="page">
+            <h2>🌐 Google 系列资源</h2>
+            <p>Chrome、Gmail、Google地图、Gemini相关工具</p>
+            <a class="download-btn" href="【替换为对应直链】" download>Chrome离线安装包</a>
+        </div>
+
+        <!-- SFS页面 -->
+        <div id="sfs" class="page">
+            <h2>🚀 SFS 航天模拟器</h2>
+            <p>SFS本体、模组、存档资源下载</p>
+            <a class="download-btn" href="【替换为对应直链】" download>SFS本体</a>
+            <a class="download-btn" href="【替换为对应直链】" download>SFS模组包</a>
+        </div>
+    </div>
+
+<script>
+    // 获取导航按钮
+    const navBtns = document.querySelectorAll('.nav-btn');
+    const pages = document.querySelectorAll('.page');
+
+    navBtns.forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+            // 清除全部active
+            navBtns.forEach(b=>b.classList.remove('active'));
+            pages.forEach(p=>p.classList.remove('show'));
+            // 当前按钮激活
+            btn.classList.add('active');
+            // 展示对应板块
+            const targetId = btn.getAttribute('data-target');
+            document.getElementById(targetId).classList.add('show');
+        })
+    })
+</script>
+</body>
+</html>
